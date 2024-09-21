@@ -1,0 +1,11 @@
+wget https://github.com/samphoerna/Sentinel-Repo/raw/main/Linux/SentinelAgent_linux_x86_64_v24_2_1_8.deb
+
+wget https://raw.githubusercontent.com/agungmp1/EDR-Repo/main/motogptoken.txt
+
+sudo dpkg -i SentinelAgent_linux_x86_64_v24_2_1_8.deb
+
+sudo /opt/sentinelone/bin/sentinelctl management token set $(cat motogptoken.txt)
+
+sudo /opt/sentinelone/bin/sentinelctl control start
+
+sudo /opt/sentinelone/bin/sentinelctl management status
